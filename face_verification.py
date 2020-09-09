@@ -61,7 +61,7 @@ def encode_img(img1,model):
     img=img1[...,::-1]
     img=np.around(np.transpose(img,(2,0,1))/255,decimals=12)
     x_train=np.array([img])
-    emb=model.predict_on_batch(x_train)
+    emb=model.layers[3].predict_on_batch(x_train)
     return emb
 
 
@@ -95,7 +95,7 @@ rimg=image_resizing(rimage)
 img=image_resizing(image)
 
 
-model=tf.keras.models.load_model('One_Shot_model.h5',custom_objects={'triplet_loss': triplet_loss})
+model=tf.keras.models.load_model('triplet_model.h5',custom_objects={'triplet_loss': triplet_loss})
 r_encode=encode_img(rimg,model)
 img_encode=encode_img(img,model)
 
