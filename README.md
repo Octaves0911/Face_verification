@@ -12,7 +12,7 @@ Face verification is the task of comparing a candidate face to another and verif
 https://www.kaggle.com/jayitabhattacharyya/face-match
 
 # Command Line:
-```face_verification.py -r path_to_reference_image -i path_to_test_image```
+```python face_verification.py -r path_to_reference_image -i path_to_test_image```
 
 
  
